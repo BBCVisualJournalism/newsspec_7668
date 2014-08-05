@@ -1,0 +1,93 @@
+.main .introduction {
+	position: relative;
+
+	.introduction-clickable {
+		display: none;
+	}
+}
+
+.main--carousel .introduction  {
+
+	cursor: pointer;
+
+	.introduction-clickable {
+		font-size: 1.2em;
+		color: #fff;
+		background: #000;
+		display: inline-block;
+		padding: 0.4em;
+		margin-bottom: 2px;
+	}
+
+	.introduction-textwrapper__launcher_icon {
+		position: absolute;
+		display: block;
+		height: 36px;
+		width: 30px;
+		background-color: transparent;
+		bottom: 40%;
+		right: 1%;
+	}
+
+	.introduction-textwrapper {
+		position: absolute;
+		bottom: 4%;
+		color: white;
+		max-width: 500px;
+		background: rgb(0,0,0);
+		background: rgba(0,0,0,0.3);
+		transition: background 1s;
+		left: 3%;
+		padding: 0 10px;
+	}
+
+	&:hover .introduction-textwrapper {
+		background: rgba(0,0,0,1);
+	}
+
+	.introduction-textwrapper__text {
+		position: relative;
+		padding: 0 50px 0 10px;
+
+		h2 {
+			font-size: 2.2em;
+			line-height: 1em;
+		}
+
+		p {
+			color: white;
+		}
+	}
+}
+
+// world service rtl version
+.rtl .main--carousel .introduction {
+	.introduction-textwrapper__launcher_icon {
+		right: auto;
+		left: 1%;
+		top: 0;
+		background-image: url('../img/chevron_left.png');
+	}
+
+	.introduction-textwrapper__text {
+		padding: 0 10px 0 50px;
+	}
+}
+
+.main--carousel .introduction--clicked {
+	display: none;
+}
+
+// don't want transition effects until the carousel has loaded
+// otherwise we get sickly spinning effects in right-to-left as it
+// whizzes along a couple of thousand pixels!
+.main--carousel--loaded {
+	
+    .carousel_large {
+    	transition: left 0.7s;
+    }
+
+    .carousel_small{
+    	transition: left 1s;
+    }
+}
